@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>LoginForm</title>
+    <style>
+        body{
+            background-color:rgb(14, 18, 66);
+            user-select: none;
+        }
+        div.a{
+            background-color:rgb(190, 190, 190);
+            width:420px;
+            height:480px;
+            margin:10% 35%;
+            box-shadow: 5px 5px 10px rgb(1,1,1,3),inset 3px 3px 10px rgb(0,0,0,2); 
+        }
+        h1{
+            margin:20px;
+            padding:15px;
+            text-align: center;
+            font-family:Arial, Helvetica, sans-serif;
+            font-weight: bolder;
+        }
+        table{
+           padding:10px 50px;
+        }
+        td{
+            font-size: 18px;
+            padding:5px;
+            font-weight: bold;
+        }
+        input{
+            width:300px;
+            height:25px;
+            border-radius: 5px;
+            
+        }
+        input[type="submit"]{
+            height:35px;
+            width:310px;
+            background-color:rgb(14, 18, 66);
+            color:white;
+            font-size: 19px;
+            border:none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            border-radius: 5px;
+
+        }
+        p{
+            margin:0;
+            padding:0;
+            font-weight: lighter;
+        }
+        span{
+            position: relative;
+            top:-25px;
+            left:280px;
+        }
+        hr{
+            border:0.5px solid grey;
+            color:grey;
+        }
+    </style>
+</head>
+<body>
+    <div class="a">
+        <h1>Login Here</h1>
+        <hr>
+        <table>
+            <tr><td>USERNAME:</td></tr>
+            <tr><td><input type="email" placeholder="ENTER EMAIL" id="a"></td></tr>
+            <tr><td><p id="demo"></p></td></tr>
+            <tr><td>PASSWORD:</td></tr>
+            <tr><td><input type="Password" placeholder="ENTER PASSWORD" id="b"><span><i class = "fa fa-eye" aria-hidden="true" onclick="toggle();"></i></span></td></tr>
+            <tr><td><p id="demo1"></p></td></tr>
+            <tr><td>PIN:</td></tr>
+            <tr><td><input type="numbers" placeholder="ENTER PIN" id="c"></td></tr>
+            <tr><td><p id="demo2"></p></td></tr>
+            <tr><td><input type="submit" value="Login" onclick="myF()"></td></tr>
+        </table>
+    </div>
+    <script>
+        function myF(){
+          var email = document.getElementById('a').value;
+          var pass = document.getElementById('b').value;
+          var pin = document.getElementById('c').value;
+          if(email==""){
+              document.getElementById('a').style.border='1px solid red';
+              document.getElementById('demo').style.color='red';
+              document.getElementById('demo').innerHTML="*Please fill out this filed";
+               }else if(email != "vineethganagoni@gmail.com"){
+              document.getElementById('demo').innerHTML="*incorrect email";
+              document.getElementById('a').style.border='1px solid red';
+              document.getElementById('demo').style.color='red';
+               }else if(pass==""){
+              document.getElementById('demo1').innerHTML="*Please fill out this filed";
+              document.getElementById('b').style.border='1px solid red';
+              document.getElementById('demo1').style.color='red';
+              }else if(pass!="vineethgoud"){
+              document.getElementById('demo1').innerHTML="*incorrect password";
+              document.getElementById('b').style.border='1px solid red';
+              document.getElementById('demo1').style.color='red';
+              } else if(pin==""){
+              document.getElementById('demo2').innerHTML="*Please fill out this filed";
+              document.getElementById('c').style.border='1px solid red';
+              document.getElementById('demo2').style.color='red';
+          }else if(pin!="12345"){
+              document.getElementById('demo2').innerHTML="*incorrect Pin";
+              document.getElementById('c').style.border='1px solid red';
+              document.getElementById('demo2').style.color='red';
+          }else{
+              alert("Login Sucessfully");
+          }
+        }
+        function toggle(){
+                var pass = document.getElementById("b");
+                if(pass.type == "text"){
+                    pass.type == "password";
+                     }else{
+                         pass.type = "text";
+                     }
+            }
+    </script>
+</body>
+</html>
